@@ -10,21 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Detail-->
-        <scene sceneID="XTo-i5-S9J">
-            <objects>
-                <viewController id="ilg-62-hLn" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hXX-Um-R9f">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="hs3-4m-QEl"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Detail" id="bfh-cR-Q19"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jL0-HA-Y66" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="905" y="743"/>
-        </scene>
         <!--Split View Controller-->
         <scene sceneID="nOv-iK-QGw">
             <objects>
@@ -116,7 +101,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="ilg-62-hLn" kind="relationship" relationship="rootViewController" id="qfb-0W-F76"/>
+                        <segue destination="24q-I4-t8c" kind="relationship" relationship="rootViewController" id="qfb-0W-F76"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6UY-aa-tVg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -179,6 +164,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="naL-M3-2fc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="901.60000000000002" y="76.911544227886068"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="cRW-xE-BmX">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Detail" id="24q-I4-t8c" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="4vQ-wr-IRD"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I3B-uk-lxJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="905" y="743"/>
         </scene>
     </scenes>
 </document>
