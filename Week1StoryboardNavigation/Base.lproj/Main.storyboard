@@ -23,7 +23,7 @@
             </objects>
             <point key="canvasLocation" x="-985" y="-205"/>
         </scene>
-        <!--View Controller-->
+        <!--Master Benchmark-->
         <scene sceneID="QqV-2O-L1w">
             <objects>
                 <viewController id="J8f-dL-tfn" sceneMemberID="viewController">
@@ -33,13 +33,13 @@
                         <color key="backgroundColor" red="1" green="1" blue="0.87480468749999996" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="2LZ-d6-9ey"/>
                     </view>
-                    <navigationItem key="navigationItem" id="t8Q-87-kC2"/>
+                    <navigationItem key="navigationItem" title="Master Benchmark" id="t8Q-87-kC2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oxw-h2-qNx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1844" y="-589.65517241379314"/>
         </scene>
-        <!--View Controller-->
+        <!--Master Profile-->
         <scene sceneID="RbO-kd-eQ2">
             <objects>
                 <viewController id="Oka-Fd-gIe" sceneMemberID="viewController">
@@ -49,13 +49,13 @@
                         <color key="backgroundColor" red="1" green="0.88005022320000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="ypT-bA-6cz"/>
                     </view>
-                    <navigationItem key="navigationItem" id="71N-Tj-meF"/>
+                    <navigationItem key="navigationItem" title="Master Profile" id="71N-Tj-meF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5oE-rP-YvZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1840.8" y="76.911544227886068"/>
         </scene>
-        <!--View Controller-->
+        <!--Master Feed-->
         <scene sceneID="wja-P3-KgI">
             <objects>
                 <viewController id="wsG-ud-SzM" sceneMemberID="viewController">
@@ -65,7 +65,7 @@
                         <color key="backgroundColor" red="0.92000000000000004" green="0.95999999999999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="8g6-qv-PgN"/>
                     </view>
-                    <navigationItem key="navigationItem" id="dLy-2g-67W"/>
+                    <navigationItem key="navigationItem" title="Master Feed" id="dLy-2g-67W"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dDc-sh-4dk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -106,7 +106,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6UY-aa-tVg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15" y="743"/>
+            <point key="canvasLocation" x="-34" y="113"/>
         </scene>
         <!--Feed-->
         <scene sceneID="Hd4-eF-49i">
@@ -173,7 +173,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I3B-uk-lxJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="905" y="743"/>
+            <point key="canvasLocation" x="-35" y="549"/>
         </scene>
     </scenes>
 </document>
