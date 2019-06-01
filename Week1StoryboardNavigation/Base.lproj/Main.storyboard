@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Jm-Cr-Mop">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -67,7 +67,19 @@
                     <view key="view" contentMode="scaleToFill" id="rOK-RE-SVT">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label from detail view controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BM9-Zx-Akp">
+                                <rect key="frame" x="211.5" y="177" width="244.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.88005022320000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="BM9-Zx-Akp" firstAttribute="centerY" secondItem="rOK-RE-SVT" secondAttribute="centerY" id="WFL-Qf-FhX"/>
+                            <constraint firstItem="BM9-Zx-Akp" firstAttribute="centerX" secondItem="rOK-RE-SVT" secondAttribute="centerX" id="iix-dD-Dsw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ypT-bA-6cz"/>
                     </view>
                     <navigationItem key="navigationItem" title="Master Profile" id="71N-Tj-meF"/>
