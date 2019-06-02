@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Jm-Cr-Mop">
     <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -68,9 +68,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CMh-t7-tLF" customClass="ShadowedButtton" customModule="Week1StoryboardNavigation" customModuleProvider="target">
-                                <rect key="frame" x="272" y="172" width="122" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CMh-t7-tLF" customClass="ShadowedButtton" customModule="Week1StoryboardNavigation" customModuleProvider="target">
+                                <rect key="frame" x="272.5" y="172.5" width="122" height="30"/>
                                 <state key="normal" title="Shadowed Button"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
@@ -89,6 +88,10 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.88005022320000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="CMh-t7-tLF" firstAttribute="centerY" secondItem="rOK-RE-SVT" secondAttribute="centerY" id="8c7-My-lTf"/>
+                            <constraint firstItem="CMh-t7-tLF" firstAttribute="centerX" secondItem="rOK-RE-SVT" secondAttribute="centerX" id="ZTK-eI-Sg8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ypT-bA-6cz"/>
                     </view>
                     <navigationItem key="navigationItem" title="Master Profile" id="71N-Tj-meF"/>
