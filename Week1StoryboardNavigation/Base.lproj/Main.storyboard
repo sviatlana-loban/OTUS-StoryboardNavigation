@@ -26,7 +26,7 @@
         <!--Master Benchmark-->
         <scene sceneID="QqV-2O-L1w">
             <objects>
-                <viewController id="J8f-dL-tfn" sceneMemberID="viewController">
+                <viewController id="J8f-dL-tfn" customClass="BenchmarkViewController" customModule="Week1StoryboardNavigation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Xz-SF-maO">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
