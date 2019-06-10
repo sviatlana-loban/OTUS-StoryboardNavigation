@@ -9,13 +9,17 @@
 import UIKit
 
 class FeedViewControllerB: UIViewController {
-    
-    var shouldPop = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? FeedViewControllerC else {
+            return
+        }
+        destination.shouldPopFeedB = true
     }
 
 }
