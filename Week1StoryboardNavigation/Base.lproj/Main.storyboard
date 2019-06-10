@@ -146,10 +146,10 @@
             </objects>
             <point key="canvasLocation" x="1844" y="-1281.4092953523239"/>
         </scene>
-        <!--Feed View ControllerB-->
+        <!--Controller B-->
         <scene sceneID="dI9-ED-zWV">
             <objects>
-                <viewController id="7k1-dK-eQr" customClass="FeedViewControllerB" customModule="Week1StoryboardNavigation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Controller B" id="7k1-dK-eQr" customClass="FeedViewControllerB" customModule="Week1StoryboardNavigation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g3M-Jk-gEN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -178,10 +178,10 @@
             </objects>
             <point key="canvasLocation" x="2766" y="-1281"/>
         </scene>
-        <!--Feed View ControllerC-->
+        <!--Controller C-->
         <scene sceneID="aH6-3q-Jcf">
             <objects>
-                <viewController id="AiT-uz-TlB" customClass="FeedViewControllerC" customModule="Week1StoryboardNavigation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Controller C" id="AiT-uz-TlB" customClass="FeedViewControllerC" customModule="Week1StoryboardNavigation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vDr-rW-IMU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
