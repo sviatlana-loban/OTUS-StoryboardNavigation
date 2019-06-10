@@ -16,6 +16,9 @@
 		845DFFF422A2F4E100A62185 /* ShadowedButtton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845DFFF322A2F4E100A62185 /* ShadowedButtton.swift */; };
 		848115A022AEDA7C00EA3624 /* ViewControllerLifeCycleBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481159F22AEDA7C00EA3624 /* ViewControllerLifeCycleBehavior.swift */; };
 		848115A222AEDBDF00EA3624 /* BenchmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848115A122AEDBDF00EA3624 /* BenchmarkViewController.swift */; };
+		848115A422AEE31300EA3624 /* DateTimerBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848115A322AEE31300EA3624 /* DateTimerBehavior.swift */; };
+		848115A622AEE3A200EA3624 /* ScreenColorBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848115A522AEE3A200EA3624 /* ScreenColorBehavior.swift */; };
+		848115A822AEE52D00EA3624 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848115A722AEE52D00EA3624 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		845DFFF322A2F4E100A62185 /* ShadowedButtton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowedButtton.swift; sourceTree = "<group>"; };
 		8481159F22AEDA7C00EA3624 /* ViewControllerLifeCycleBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLifeCycleBehavior.swift; sourceTree = "<group>"; };
 		848115A122AEDBDF00EA3624 /* BenchmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchmarkViewController.swift; sourceTree = "<group>"; };
+		848115A322AEE31300EA3624 /* DateTimerBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimerBehavior.swift; sourceTree = "<group>"; };
+		848115A522AEE3A200EA3624 /* ScreenColorBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenColorBehavior.swift; sourceTree = "<group>"; };
+		848115A722AEE52D00EA3624 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +73,9 @@
 				845DFFDE22A07B8500A62185 /* ViewController.swift */,
 				848115A122AEDBDF00EA3624 /* BenchmarkViewController.swift */,
 				845DFFE022A07B8500A62185 /* Main.storyboard */,
+				848115A322AEE31300EA3624 /* DateTimerBehavior.swift */,
+				848115A522AEE3A200EA3624 /* ScreenColorBehavior.swift */,
+				848115A722AEE52D00EA3624 /* ProfileViewController.swift */,
 				845DFFF322A2F4E100A62185 /* ShadowedButtton.swift */,
 				845DFFEE22A080F300A62185 /* Detail.storyboard */,
 				845DFFE322A07B8600A62185 /* Assets.xcassets */,
@@ -149,9 +158,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				845DFFF422A2F4E100A62185 /* ShadowedButtton.swift in Sources */,
+				848115A422AEE31300EA3624 /* DateTimerBehavior.swift in Sources */,
 				845DFFDF22A07B8500A62185 /* ViewController.swift in Sources */,
+				848115A622AEE3A200EA3624 /* ScreenColorBehavior.swift in Sources */,
 				845DFFDD22A07B8500A62185 /* AppDelegate.swift in Sources */,
 				848115A022AEDA7C00EA3624 /* ViewControllerLifeCycleBehavior.swift in Sources */,
+				848115A822AEE52D00EA3624 /* ProfileViewController.swift in Sources */,
 				848115A222AEDBDF00EA3624 /* BenchmarkViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

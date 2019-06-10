@@ -40,26 +40,6 @@ extension ViewControllerLifecycleBehavior {
     func afterLayingOutSubviews(_ viewController: UIViewController) {}
 }
 
-final class DateTimerBehavior: ViewControllerLifecycleBehavior {
-    
-    private var timer: Timer?
-    
-    func afterAppearing(_ viewController: UIViewController) {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runTimed), userInfo: nil, repeats: true)
-    }
-    
-    func beforeDisappearing(_ viewController: UIViewController) {
-        timer?.invalidate()
-    }
-    
-    @objc private func runTimed() {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
-        print(dateFormatter.string(from: Date()))
-    }
-}
-
-
 extension UIViewController {
     /*
      Add behaviors to be hooked into this view controller’s lifecycle.
