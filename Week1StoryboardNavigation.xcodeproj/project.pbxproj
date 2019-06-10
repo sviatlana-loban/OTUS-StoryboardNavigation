@@ -8,24 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		845DFFDD22A07B8500A62185 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845DFFDC22A07B8500A62185 /* AppDelegate.swift */; };
-		845DFFDF22A07B8500A62185 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845DFFDE22A07B8500A62185 /* ViewController.swift */; };
 		845DFFE222A07B8500A62185 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845DFFE022A07B8500A62185 /* Main.storyboard */; };
 		845DFFE422A07B8600A62185 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 845DFFE322A07B8600A62185 /* Assets.xcassets */; };
 		845DFFE722A07B8600A62185 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845DFFE522A07B8600A62185 /* LaunchScreen.storyboard */; };
 		845DFFF022A080F300A62185 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845DFFEE22A080F300A62185 /* Detail.storyboard */; };
 		845DFFF422A2F4E100A62185 /* ShadowedButtton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845DFFF322A2F4E100A62185 /* ShadowedButtton.swift */; };
+		848115A022AEDA7C00EA3624 /* ViewControllerLifeCycleBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481159F22AEDA7C00EA3624 /* ViewControllerLifeCycleBehavior.swift */; };
+		848115A222AEDBDF00EA3624 /* BenchmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848115A122AEDBDF00EA3624 /* BenchmarkViewController.swift */; };
+		848115A422AEE31300EA3624 /* DateTimerBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848115A322AEE31300EA3624 /* DateTimerBehavior.swift */; };
+		848115A622AEE3A200EA3624 /* ScreenColorBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848115A522AEE3A200EA3624 /* ScreenColorBehavior.swift */; };
+		848115A822AEE52D00EA3624 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848115A722AEE52D00EA3624 /* ProfileViewController.swift */; };
+		848115AA22AEE96400EA3624 /* FeedViewControllerB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848115A922AEE96400EA3624 /* FeedViewControllerB.swift */; };
+		848115AC22AEE97200EA3624 /* FeedViewControllerC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848115AB22AEE97200EA3624 /* FeedViewControllerC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		845DFFD922A07B8500A62185 /* Week1StoryboardNavigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Week1StoryboardNavigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		845DFFDC22A07B8500A62185 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		845DFFDE22A07B8500A62185 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		845DFFE122A07B8500A62185 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		845DFFE322A07B8600A62185 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		845DFFE622A07B8600A62185 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		845DFFE822A07B8600A62185 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		845DFFEF22A080F300A62185 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Week1StoryboardNavigation/Base.lproj/Detail.storyboard; sourceTree = "<group>"; };
 		845DFFF322A2F4E100A62185 /* ShadowedButtton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowedButtton.swift; sourceTree = "<group>"; };
+		8481159F22AEDA7C00EA3624 /* ViewControllerLifeCycleBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLifeCycleBehavior.swift; sourceTree = "<group>"; };
+		848115A122AEDBDF00EA3624 /* BenchmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchmarkViewController.swift; sourceTree = "<group>"; };
+		848115A322AEE31300EA3624 /* DateTimerBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimerBehavior.swift; sourceTree = "<group>"; };
+		848115A522AEE3A200EA3624 /* ScreenColorBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenColorBehavior.swift; sourceTree = "<group>"; };
+		848115A722AEE52D00EA3624 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		848115A922AEE96400EA3624 /* FeedViewControllerB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewControllerB.swift; sourceTree = "<group>"; };
+		848115AB22AEE97200EA3624 /* FeedViewControllerC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewControllerC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,15 +71,77 @@
 			isa = PBXGroup;
 			children = (
 				845DFFDC22A07B8500A62185 /* AppDelegate.swift */,
-				845DFFDE22A07B8500A62185 /* ViewController.swift */,
 				845DFFE022A07B8500A62185 /* Main.storyboard */,
+				848115AD22AEEC6300EA3624 /* Feed */,
+				848115AE22AEEC7D00EA3624 /* Benchmark */,
+				848115AF22AEEC8D00EA3624 /* Profile */,
+				848115B222AEECE600EA3624 /* Detail */,
+				848115B022AEECAF00EA3624 /* Behaviors */,
+				848115B122AEECCA00EA3624 /* CustomUIElements */,
+				848115B422AEEE1E00EA3624 /* SupportingFiles */,
+			);
+			path = Week1StoryboardNavigation;
+			sourceTree = "<group>";
+		};
+		848115AD22AEEC6300EA3624 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				848115A922AEE96400EA3624 /* FeedViewControllerB.swift */,
+				848115AB22AEE97200EA3624 /* FeedViewControllerC.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		848115AE22AEEC7D00EA3624 /* Benchmark */ = {
+			isa = PBXGroup;
+			children = (
+				848115A122AEDBDF00EA3624 /* BenchmarkViewController.swift */,
+			);
+			path = Benchmark;
+			sourceTree = "<group>";
+		};
+		848115AF22AEEC8D00EA3624 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				848115A722AEE52D00EA3624 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		848115B022AEECAF00EA3624 /* Behaviors */ = {
+			isa = PBXGroup;
+			children = (
+				848115A322AEE31300EA3624 /* DateTimerBehavior.swift */,
+				8481159F22AEDA7C00EA3624 /* ViewControllerLifeCycleBehavior.swift */,
+				848115A522AEE3A200EA3624 /* ScreenColorBehavior.swift */,
+			);
+			path = Behaviors;
+			sourceTree = "<group>";
+		};
+		848115B122AEECCA00EA3624 /* CustomUIElements */ = {
+			isa = PBXGroup;
+			children = (
 				845DFFF322A2F4E100A62185 /* ShadowedButtton.swift */,
+			);
+			path = CustomUIElements;
+			sourceTree = "<group>";
+		};
+		848115B222AEECE600EA3624 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
 				845DFFEE22A080F300A62185 /* Detail.storyboard */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		848115B422AEEE1E00EA3624 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
 				845DFFE322A07B8600A62185 /* Assets.xcassets */,
 				845DFFE522A07B8600A62185 /* LaunchScreen.storyboard */,
 				845DFFE822A07B8600A62185 /* Info.plist */,
 			);
-			path = Week1StoryboardNavigation;
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,8 +217,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				845DFFF422A2F4E100A62185 /* ShadowedButtton.swift in Sources */,
-				845DFFDF22A07B8500A62185 /* ViewController.swift in Sources */,
+				848115A422AEE31300EA3624 /* DateTimerBehavior.swift in Sources */,
+				848115AC22AEE97200EA3624 /* FeedViewControllerC.swift in Sources */,
+				848115AA22AEE96400EA3624 /* FeedViewControllerB.swift in Sources */,
+				848115A622AEE3A200EA3624 /* ScreenColorBehavior.swift in Sources */,
 				845DFFDD22A07B8500A62185 /* AppDelegate.swift in Sources */,
+				848115A022AEDA7C00EA3624 /* ViewControllerLifeCycleBehavior.swift in Sources */,
+				848115A822AEE52D00EA3624 /* ProfileViewController.swift in Sources */,
+				848115A222AEDBDF00EA3624 /* BenchmarkViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,7 +379,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Week1StoryboardNavigation/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Week1StoryboardNavigation/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,7 +396,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Week1StoryboardNavigation/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Week1StoryboardNavigation/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
