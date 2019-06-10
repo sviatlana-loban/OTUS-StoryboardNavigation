@@ -53,7 +53,9 @@ final class DateTimerBehavior: ViewControllerLifecycleBehavior {
     }
     
     @objc private func runTimed() {
-        print(Date())
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+        print(dateFormatter.string(from: Date()))
     }
 }
 
