@@ -19,6 +19,8 @@
 		848115A422AEE31300EA3624 /* DateTimerBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848115A322AEE31300EA3624 /* DateTimerBehavior.swift */; };
 		848115A622AEE3A200EA3624 /* ScreenColorBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848115A522AEE3A200EA3624 /* ScreenColorBehavior.swift */; };
 		848115A822AEE52D00EA3624 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848115A722AEE52D00EA3624 /* ProfileViewController.swift */; };
+		848115AA22AEE96400EA3624 /* FeedViewControllerB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848115A922AEE96400EA3624 /* FeedViewControllerB.swift */; };
+		848115AC22AEE97200EA3624 /* FeedViewControllerC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848115AB22AEE97200EA3624 /* FeedViewControllerC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		848115A322AEE31300EA3624 /* DateTimerBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimerBehavior.swift; sourceTree = "<group>"; };
 		848115A522AEE3A200EA3624 /* ScreenColorBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenColorBehavior.swift; sourceTree = "<group>"; };
 		848115A722AEE52D00EA3624 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		848115A922AEE96400EA3624 /* FeedViewControllerB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewControllerB.swift; sourceTree = "<group>"; };
+		848115AB22AEE97200EA3624 /* FeedViewControllerC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewControllerC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 				845DFFDE22A07B8500A62185 /* ViewController.swift */,
 				848115A122AEDBDF00EA3624 /* BenchmarkViewController.swift */,
 				845DFFE022A07B8500A62185 /* Main.storyboard */,
+				848115A922AEE96400EA3624 /* FeedViewControllerB.swift */,
+				848115AB22AEE97200EA3624 /* FeedViewControllerC.swift */,
 				848115A322AEE31300EA3624 /* DateTimerBehavior.swift */,
 				848115A522AEE3A200EA3624 /* ScreenColorBehavior.swift */,
 				848115A722AEE52D00EA3624 /* ProfileViewController.swift */,
@@ -159,6 +165,8 @@
 			files = (
 				845DFFF422A2F4E100A62185 /* ShadowedButtton.swift in Sources */,
 				848115A422AEE31300EA3624 /* DateTimerBehavior.swift in Sources */,
+				848115AC22AEE97200EA3624 /* FeedViewControllerC.swift in Sources */,
+				848115AA22AEE96400EA3624 /* FeedViewControllerB.swift in Sources */,
 				845DFFDF22A07B8500A62185 /* ViewController.swift in Sources */,
 				848115A622AEE3A200EA3624 /* ScreenColorBehavior.swift in Sources */,
 				845DFFDD22A07B8500A62185 /* AppDelegate.swift in Sources */,
