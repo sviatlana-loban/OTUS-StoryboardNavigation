@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Split View Controller-->
+        <!--Colored Split View Controller-->
         <scene sceneID="nOv-iK-QGw">
             <objects>
-                <splitViewController id="8Jm-Cr-Mop" sceneMemberID="viewController">
+                <splitViewController id="8Jm-Cr-Mop" customClass="ColoredSplitViewController" customModule="Week1StoryboardNavigation" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <segue destination="M3d-eq-8fL" kind="relationship" relationship="detailViewController" id="Up1-SA-ewG"/>
                         <segue destination="njZ-a7-4J2" kind="relationship" relationship="masterViewController" id="LXD-ch-ZLh"/>
