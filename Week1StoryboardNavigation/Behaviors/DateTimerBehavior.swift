@@ -12,6 +12,11 @@ import UIKit
 final class DateTimerBehavior: ViewControllerLifecycleBehavior {
     
     private var timer: Timer?
+    private var block: (()->())?
+    
+    init(_ block: (()->())?) {
+        self.block = block
+    }
     
     func afterAppearing(_ viewController: UIViewController) {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runTimed), userInfo: nil, repeats: true)
@@ -22,8 +27,8 @@ final class DateTimerBehavior: ViewControllerLifecycleBehavior {
     }
     
     @objc private func runTimed() {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
-        print(dateFormatter.string(from: Date()))
+        if let block = block {
+            block()
+        }
     }
 }

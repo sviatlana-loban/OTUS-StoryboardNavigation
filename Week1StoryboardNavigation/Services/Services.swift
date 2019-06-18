@@ -16,4 +16,8 @@ class Services {
         return DataProvider(count: 20)
     }()
     
+    static var timerProvider: TimerProvider = {
+        return TimerProvider(count: 20)
+    }()
+    
 }
