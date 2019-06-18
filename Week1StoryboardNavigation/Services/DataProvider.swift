@@ -13,9 +13,9 @@ final class DataProvider {
     private(set) var data: [String]
     
     init(count: Int) {
-        data = [String].init(repeating: "", count: count)
+        data = [String].init()
         for i in 0..<count {
-            data[i] = "Item \(i)"
+            data.append("Item \(i)")
         }
     }
 }
