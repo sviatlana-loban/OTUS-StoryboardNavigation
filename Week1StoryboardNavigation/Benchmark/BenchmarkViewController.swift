@@ -20,9 +20,9 @@ class BenchmarkViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.setCollectionViewLayout(StagLayout(widthHeightRatios: [(1.0, 1.0), (0.5, 0.5), (0.5, 0.5)], itemSpacing: 4), animated: true)
         
-        addBehaviors(behaviors: [DateTimerBehavior( { [unowned self] in
+        addBehaviors(behaviors: [DateTimerBehavior( startBlock: { [unowned self] in
             self.collectionView.reloadData()
-        } )])
+            }, endBlock: { [unowned self] in self.dataSource.forEach{$0.kill()} } )])
     }
     
 }

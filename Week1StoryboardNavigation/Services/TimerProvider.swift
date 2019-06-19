@@ -54,7 +54,10 @@ final class TimerProvider {
             let seconds = Int(secondsCounter) % 60
             return String(format: "%02i:%02i:%02i", hours, minutes, seconds)
         }
+        
+        func kill() {
+            timer?.invalidate()
+            timer = nil
+        }
     }
-    
-
 }

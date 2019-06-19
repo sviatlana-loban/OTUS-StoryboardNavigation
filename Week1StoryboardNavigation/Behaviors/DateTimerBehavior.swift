@@ -12,10 +12,12 @@ import UIKit
 final class DateTimerBehavior: ViewControllerLifecycleBehavior {
     
     private var timer: Timer?
-    private var block: (()->())?
+    private var startBlock: (()->())?
+    private var endBlock: (()->())?
     
-    init(_ block: (()->())?) {
-        self.block = block
+    init(startBlock: (()->())?, endBlock: (()->())?) {
+        self.startBlock = startBlock
+        self.endBlock = endBlock
     }
     
     func afterAppearing(_ viewController: UIViewController) {
@@ -24,10 +26,13 @@ final class DateTimerBehavior: ViewControllerLifecycleBehavior {
     
     func beforeDisappearing(_ viewController: UIViewController) {
         timer?.invalidate()
+        if let block = endBlock {
+            block()
+        }
     }
     
     @objc private func runTimed() {
-        if let block = block {
+        if let block = startBlock {
             block()
         }
     }
