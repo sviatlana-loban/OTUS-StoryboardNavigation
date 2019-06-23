@@ -28,17 +28,13 @@ final class TimerProvider {
         init() {}
         
         func pause() {
-            if var timer = timer {
-                if paused {
-                    timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runTimed), userInfo: nil, repeats: true)
-                } else {
-                    timer.invalidate()
-                }
-                paused = !paused
-            } else {
+            if paused {
+                timer = nil
                 timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runTimed), userInfo: nil, repeats: true)
-                paused = false
+            } else {
+                timer?.invalidate()
             }
+            paused = !paused
         }
         
         @objc private func runTimed() {
