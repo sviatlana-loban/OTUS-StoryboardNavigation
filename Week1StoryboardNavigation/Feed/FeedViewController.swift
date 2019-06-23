@@ -19,6 +19,8 @@ class FeedViewController: UIViewController {
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseId)
     }
 
 }
@@ -29,15 +31,10 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let index = indexPath.row
-        if let cell = tableView.dequeueReusableCell(withIdentifier: reuseId) {
-            cell.textLabel?.text = dataSource[index]
-            return cell
-        } else {
-            let cell = UITableViewCell(style: .default, reuseIdentifier: reuseId)
-            cell.textLabel?.text = dataSource[index]
-            return cell
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseId, for: indexPath)
+        cell.textLabel?.text = dataSource[indexPath.row]
+        
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
