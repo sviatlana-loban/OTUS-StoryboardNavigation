@@ -22,33 +22,62 @@ final class TimerProvider {
     class PausableTimer {
         
         private var timer: Timer?
-        private var secondsCounter = 0
+        private var runSecondsCounter = 0
+        private var stopSecondsCounter = 0
         private(set) var paused = true
+        
+        private(set) var viewRunSeconds = 0
+        private(set) var viewStopSeconds = 0
         
         init() {}
         
         func pause() {
-            if paused {
-                timer = nil
+//            if paused {
+//                timer = nil
+//                timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runTimed), userInfo: nil, repeats: true)
+//            } else {
+//                timer?.invalidate()
+//            }
+            if timer == nil {
                 timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runTimed), userInfo: nil, repeats: true)
-            } else {
-                timer?.invalidate()
             }
             paused = !paused
         }
         
         @objc private func runTimed() {
-            secondsCounter += 1
+            if paused {
+                stopSecondsCounter += 1
+            } else {
+                runSecondsCounter += 1
+            }
         }
         
         func getTimerString() -> String? {
             guard let timer = timer else {
                 return nil
             }
-            let hours = Int(secondsCounter) / 3600
-            let minutes = Int(secondsCounter) / 60 % 60
-            let seconds = Int(secondsCounter) % 60
-            return String(format: "%02i:%02i:%02i", hours, minutes, seconds)
+            let runMinutes = Int(runSecondsCounter) / 60 % 60
+            let runSeconds = Int(runSecondsCounter) % 60
+            
+            let stopMinutes = Int(stopSecondsCounter) / 60 % 60
+            let stopSeconds = Int(stopSecondsCounter) % 60
+            
+            return String(format: "run %02d:%02d stop %02d:%02d", runMinutes, runSeconds, stopMinutes, stopSeconds)
+        }
+        
+        func getRunStopPercents() -> (runValue: Double, stopValue: Double) {
+            let sum = viewRunSeconds + viewStopSeconds
+            guard  sum != 0 else {
+                return (0,0)
+            }
+            let runValue = Double(viewRunSeconds*100/sum)
+            let stopValue = 100 - runValue
+            return (runValue: runValue, stopValue: stopValue)
+        }
+        
+        func updateRunStopPercents() {
+            viewRunSeconds = runSecondsCounter
+            viewStopSeconds = stopSecondsCounter
         }
         
         func kill() {

@@ -8,14 +8,20 @@
 
 import UIKit
 
+protocol BenchmarkCellDelegate: class {
+    func updateChartTapped(at index: IndexPath)
+}
+
 class BenchmarkCollectionViewCell: UICollectionViewCell {
     
     static let reuseId = String(describing: BenchmarkCollectionViewCell.self)
     //        static let nib = UINib(nibName: String(describing: BenchmarkCollectionViewCell.self), bundle: nil)
+    weak var delegate: BenchmarkCellDelegate?
+    var index: IndexPath?
     
     @IBOutlet private weak var stackView: UIStackView!
-    @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var label: UILabel!
+    @IBOutlet weak var pieChartView: PieChartView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,14 +32,22 @@ class BenchmarkCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        updateContentStyle()
+        //updateContentStyle()
     }
     
-    func update(text: String, image: UIImage) {
-        imageView.image = image
+    func update(text: String, runValue: Double, stopValue: Double) {
+        pieChartView.segments = [
+            Segment(color: .red, value: CGFloat(runValue), title: "\(runValue)%r"),
+            Segment(color: .blue, value: CGFloat(stopValue), title: "\(stopValue)%s"),
+        ]
         label.text = text
     }
     
+    @IBAction func updateChartTapped(_ sender: Any) {
+        if let delegate = delegate, let index = index {
+            delegate.updateChartTapped(at: index)
+        }
+    }
     private func updateContentStyle() {
         let isHorizontalStyle = bounds.width > 2 * bounds.height
         let oldAxis = stackView.axis
