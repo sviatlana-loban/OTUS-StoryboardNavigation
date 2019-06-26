@@ -28,6 +28,8 @@
 		84C5D66D22B8349E001E773F /* BenchmarkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5D66C22B8349E001E773F /* BenchmarkCollectionViewCell.swift */; };
 		84C5D66F22B83A6B001E773F /* TimerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5D66E22B83A6B001E773F /* TimerProvider.swift */; };
 		84C5D67222B9096D001E773F /* StagLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5D67122B9096D001E773F /* StagLayout.swift */; };
+		84C5D67D22C155E1001E773F /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5D67C22C155E1001E773F /* PieChartView.swift */; };
+		84C5D67F22C34DCB001E773F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5D67E22C34DC9001E773F /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		84C5D66C22B8349E001E773F /* BenchmarkCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchmarkCollectionViewCell.swift; sourceTree = "<group>"; };
 		84C5D66E22B83A6B001E773F /* TimerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerProvider.swift; sourceTree = "<group>"; };
 		84C5D67122B9096D001E773F /* StagLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StagLayout.swift; sourceTree = "<group>"; };
+		84C5D67C22C155E1001E773F /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
+		84C5D67E22C34DC9001E773F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +148,8 @@
 			children = (
 				848115B722B0051000EA3624 /* ColoredSplitViewController.swift */,
 				845DFFF322A2F4E100A62185 /* ShadowedButtton.swift */,
+				84C5D67C22C155E1001E773F /* PieChartView.swift */,
+				84C5D67E22C34DC9001E773F /* Extensions.swift */,
 			);
 			path = CustomUIElements;
 			sourceTree = "<group>";
@@ -256,12 +262,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84C5D67D22C155E1001E773F /* PieChartView.swift in Sources */,
 				845DFFF422A2F4E100A62185 /* ShadowedButtton.swift in Sources */,
 				84C5D66D22B8349E001E773F /* BenchmarkCollectionViewCell.swift in Sources */,
 				848115A422AEE31300EA3624 /* DateTimerBehavior.swift in Sources */,
 				848115AC22AEE97200EA3624 /* FeedViewControllerC.swift in Sources */,
 				848115AA22AEE96400EA3624 /* FeedViewControllerB.swift in Sources */,
 				848115B822B0051000EA3624 /* ColoredSplitViewController.swift in Sources */,
+				84C5D67F22C34DCB001E773F /* Extensions.swift in Sources */,
 				84C5D67222B9096D001E773F /* StagLayout.swift in Sources */,
 				84C5D66422B82C40001E773F /* Services.swift in Sources */,
 				84C5D66722B82CDA001E773F /* DataProvider.swift in Sources */,
