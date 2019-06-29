@@ -14,6 +14,7 @@ class FeedViewController: UIViewController {
     
     private let reuseId = "feedReusableCell"
     let dataSource = Services.dataProvider.data
+    let algoNames = AlgoProvider().all
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,13 +40,23 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let sessionSummaryViewController = storyboard.instantiateViewController(withIdentifier: "SessionSummaryViewController") as? SessionSummaryViewController else {
-            return
+        let storyboard = UIStoryboard(name: "Feed", bundle: nil)
+        var vc: UIViewController?
+        
+        if dataSource[indexPath.row] == "SuffixArray" {
+            vc = storyboard.instantiateViewController(withIdentifier: "SuffixViewController")
+        } else {
+            guard let sessionSummaryViewController = storyboard.instantiateViewController(withIdentifier: "SessionSummaryViewController") as? SessionSummaryViewController else {
+                return
+            }
+            sessionSummaryViewController.text = dataSource[indexPath.row]
+            vc = sessionSummaryViewController
         }
         
-        sessionSummaryViewController.text = dataSource[indexPath.row]
-        self.navigationController?.pushViewController(sessionSummaryViewController, animated: true)
+        if let pushViewController = vc {
+            self.navigationController?.pushViewController(pushViewController, animated: true)
+        }
+        
     }
     
 }
