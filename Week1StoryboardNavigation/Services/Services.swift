@@ -20,4 +20,8 @@ class Services {
         return TimerProvider(count: 20)
     }()
     
+    static var algoProvider: AlgoProvider = {
+        return AlgoProvider()
+    }()
+    
 }
