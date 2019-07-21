@@ -18,12 +18,14 @@ final class SuffixArrayManipulator {
             for name in names {
                 self.suffixArray.append(contentsOf: SuffixSequence(string: name))
             }
+            //print(self.suffixArray)
         }
     }
     
     func sortAscending() -> TimeInterval {
         return Profiler.runClosureForTime() {
             self.suffixArray = self.suffixArray.sorted(by: {$0.0 < $1.0})
+            //print(self.suffixArray)
         }
     }
     
@@ -66,7 +68,16 @@ final class SuffixArrayManipulator {
             }
         }
         return timed
-    }    
+    }
+    
+    func lookupSeveralTimes(count: Int) -> TimeInterval {
+        let findMe = suffixArray[Int.random(in: 0..<suffixArray.count)].0
+        
+        let timed =  Profiler.runClosureForTime() {
+            let _ = self.suffixArray.filter({$0.0 == findMe})
+        }
+        return timed
+    }
     
 }
 

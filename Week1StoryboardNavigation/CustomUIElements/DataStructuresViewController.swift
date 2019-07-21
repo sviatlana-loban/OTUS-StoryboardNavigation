@@ -26,7 +26,7 @@ class DataStructuresViewController: UIViewController, UITableViewDataSource, UIT
 
   //MARK: item tracking
 
-  fileprivate var numberOfItems: Int = 1000 //Default to 1000
+  fileprivate var numberOfItems: Int = 1 //Default to 1
 
   //MARK: Lazy-instantiated variables
 
@@ -76,7 +76,7 @@ class DataStructuresViewController: UIViewController, UITableViewDataSource, UIT
   //MARK: Convenience methods
 
   func updateCountLabel() {
-    countLabel.text = "Number of items: \(numberFormatter.string(from: numberOfItems as NSNumber)!)"
+    countLabel.text = "How many searches: \(numberFormatter.string(from: numberOfItems as NSNumber)!)"
   }
 
   func setSliderValueProgrammatically(_ value: Int) {

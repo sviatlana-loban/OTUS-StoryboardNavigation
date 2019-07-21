@@ -53,7 +53,7 @@ final class TimerProvider {
         }
         
         func getTimerString() -> String? {
-            guard let timer = timer else {
+            guard timer != nil else {
                 return nil
             }
             let runMinutes = Int(runSecondsCounter) / 60 % 60

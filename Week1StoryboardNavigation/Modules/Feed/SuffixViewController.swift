@@ -10,7 +10,8 @@ private enum ArrayVCRow: Int {
     case creation = 0,
     sort,
     lookupByObject,
-    lookupExisting
+    lookupExisting,
+    lookupSeveralTimes
 }
 
 import UIKit
@@ -26,6 +27,8 @@ class SuffixViewController: DataStructuresViewController {
     var lookupByIndexTime: TimeInterval = 0
     var lookupByObjectTime: TimeInterval = 0
     var lookupExistingObjects: TimeInterval = 0
+    var lookupSeveralTimes: TimeInterval = 0
+    var searches: Int = 1
     
     //MARK: - Methods
     
@@ -40,6 +43,7 @@ class SuffixViewController: DataStructuresViewController {
     
     override func create(_ size: Int) {
         creationTime = arrayManipulator.setupWithNames(names: algoNames)
+        self.searches = size
     }
     
     override func test() {
@@ -47,6 +51,7 @@ class SuffixViewController: DataStructuresViewController {
             sortTime = arrayManipulator.sortAscending()
             lookupByObjectTime = arrayManipulator.lookupStrings(count: 10, length: 3)
             lookupExistingObjects = arrayManipulator.lookupExistingStrings(count: 10)
+            lookupSeveralTimes = arrayManipulator.lookupSeveralTimes(count: searches)
         } else {
             print("Array not set up yet!")
         }
@@ -70,8 +75,13 @@ class SuffixViewController: DataStructuresViewController {
         case ArrayVCRow.lookupExisting.rawValue:
             cell.textLabel!.text = "Lookup By Existing Object:"
             cell.detailTextLabel!.text = formattedTime(lookupExistingObjects)
+        case ArrayVCRow.lookupSeveralTimes.rawValue:
+            cell.textLabel!.text = "Lookup Several Times:"
+            cell.detailTextLabel!.text = formattedTime(lookupSeveralTimes)
         default:
-            print("Unhandled row! \(indexPath.row)")
+            cell.textLabel!.text = ""
+            cell.detailTextLabel!.text = ""
+            //print("Unhandled row! \(indexPath.row)")
         }
         
         return cell
