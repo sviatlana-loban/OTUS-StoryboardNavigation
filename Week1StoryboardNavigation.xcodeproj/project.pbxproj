@@ -34,6 +34,11 @@
 		84A3464122E613D7006F6178 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A3464022E613D7006F6178 /* ShareViewController.swift */; };
 		84A3464422E613D7006F6178 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A3464222E613D7006F6178 /* MainInterface.storyboard */; };
 		84A3464822E613D7006F6178 /* ShareText.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 84A3463E22E613D7006F6178 /* ShareText.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		84A3465122E6548E006F6178 /* SharedTextParser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A3465022E6548E006F6178 /* SharedTextParser.storyboard */; };
+		84A3465422E762A2006F6178 /* SharedTextParserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A3465322E762A2006F6178 /* SharedTextParserViewController.swift */; };
+		84A3465722EDA8D3006F6178 /* LengthMeasureReplacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A3465622EDA8D3006F6178 /* LengthMeasureReplacer.swift */; };
+		84A3465922F0E130006F6178 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A3465822F0E130006F6178 /* Extensions.swift */; };
+		84A3465B22F0E157006F6178 /* DateReplacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A3465A22F0E157006F6178 /* DateReplacer.swift */; };
 		84C5D66422B82C40001E773F /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5D66322B82C40001E773F /* Services.swift */; };
 		84C5D66722B82CDA001E773F /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5D66622B82CDA001E773F /* DataProvider.swift */; };
 		84C5D66922B82EFE001E773F /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5D66822B82EFE001E773F /* FeedViewController.swift */; };
@@ -42,7 +47,7 @@
 		84C5D66F22B83A6B001E773F /* TimerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5D66E22B83A6B001E773F /* TimerProvider.swift */; };
 		84C5D67222B9096D001E773F /* StagLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5D67122B9096D001E773F /* StagLayout.swift */; };
 		84C5D67D22C155E1001E773F /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5D67C22C155E1001E773F /* PieChartView.swift */; };
-		84C5D67F22C34DCB001E773F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5D67E22C34DC9001E773F /* Extensions.swift */; };
+		84C5D67F22C34DCB001E773F /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5D67E22C34DC9001E773F /* UIExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +107,11 @@
 		84A3464522E613D7006F6178 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84A3464D22E6140C006F6178 /* Week1StoryboardNavigation.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Week1StoryboardNavigation.entitlements; sourceTree = "<group>"; };
 		84A3464E22E61450006F6178 /* ShareText.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareText.entitlements; sourceTree = "<group>"; };
+		84A3465022E6548E006F6178 /* SharedTextParser.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SharedTextParser.storyboard; sourceTree = "<group>"; };
+		84A3465322E762A2006F6178 /* SharedTextParserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTextParserViewController.swift; sourceTree = "<group>"; };
+		84A3465622EDA8D3006F6178 /* LengthMeasureReplacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LengthMeasureReplacer.swift; sourceTree = "<group>"; };
+		84A3465822F0E130006F6178 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		84A3465A22F0E157006F6178 /* DateReplacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateReplacer.swift; sourceTree = "<group>"; };
 		84C5D66322B82C40001E773F /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		84C5D66622B82CDA001E773F /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		84C5D66822B82EFE001E773F /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -110,7 +120,7 @@
 		84C5D66E22B83A6B001E773F /* TimerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerProvider.swift; sourceTree = "<group>"; };
 		84C5D67122B9096D001E773F /* StagLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StagLayout.swift; sourceTree = "<group>"; };
 		84C5D67C22C155E1001E773F /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
-		84C5D67E22C34DC9001E773F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		84C5D67E22C34DC9001E773F /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +156,7 @@
 		84320AC822C7F03D00EEDA34 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				84A3464F22E65470006F6178 /* SharedTextParser */,
 				848115AD22AEEC6300EA3624 /* Feed */,
 				848115AE22AEEC7D00EA3624 /* Benchmark */,
 				848115AF22AEEC8D00EA3624 /* Profile */,
@@ -235,7 +246,7 @@
 				848115B722B0051000EA3624 /* ColoredSplitViewController.swift */,
 				845DFFF322A2F4E100A62185 /* ShadowedButtton.swift */,
 				84C5D67C22C155E1001E773F /* PieChartView.swift */,
-				84C5D67E22C34DC9001E773F /* Extensions.swift */,
+				84C5D67E22C34DC9001E773F /* UIExtensions.swift */,
 				84320ABC22C7A71400EEDA34 /* DataStructuresViewController.swift */,
 			);
 			path = CustomUIElements;
@@ -270,6 +281,25 @@
 			path = ShareText;
 			sourceTree = "<group>";
 		};
+		84A3464F22E65470006F6178 /* SharedTextParser */ = {
+			isa = PBXGroup;
+			children = (
+				84A3465022E6548E006F6178 /* SharedTextParser.storyboard */,
+				84A3465322E762A2006F6178 /* SharedTextParserViewController.swift */,
+			);
+			path = SharedTextParser;
+			sourceTree = "<group>";
+		};
+		84A3465D22F32BA6006F6178 /* ShareTextServices */ = {
+			isa = PBXGroup;
+			children = (
+				84A3465822F0E130006F6178 /* Extensions.swift */,
+				84A3465A22F0E157006F6178 /* DateReplacer.swift */,
+				84A3465622EDA8D3006F6178 /* LengthMeasureReplacer.swift */,
+			);
+			path = ShareTextServices;
+			sourceTree = "<group>";
+		};
 		84C5D66522B82C48001E773F /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +308,7 @@
 				84320AB222C7828300EEDA34 /* AlgoProvider.swift */,
 				84C5D66E22B83A6B001E773F /* TimerProvider.swift */,
 				84C5D66622B82CDA001E773F /* DataProvider.swift */,
+				84A3465D22F32BA6006F6178 /* ShareTextServices */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -386,6 +417,7 @@
 				845DFFE422A07B8600A62185 /* Assets.xcassets in Resources */,
 				845DFFE222A07B8500A62185 /* Main.storyboard in Resources */,
 				845DFFF022A080F300A62185 /* Detail.storyboard in Resources */,
+				84A3465122E6548E006F6178 /* SharedTextParser.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,21 +448,25 @@
 				848115AA22AEE96400EA3624 /* FeedViewControllerB.swift in Sources */,
 				848115B822B0051000EA3624 /* ColoredSplitViewController.swift in Sources */,
 				84320AC422C7EE5200EEDA34 /* SuffixArrayManipulator.swift in Sources */,
-				84C5D67F22C34DCB001E773F /* Extensions.swift in Sources */,
+				84C5D67F22C34DCB001E773F /* UIExtensions.swift in Sources */,
 				84C5D67222B9096D001E773F /* StagLayout.swift in Sources */,
 				84320AB522C7829800EEDA34 /* Profiler.swift in Sources */,
 				84C5D66422B82C40001E773F /* Services.swift in Sources */,
 				84320ABD22C7A71400EEDA34 /* DataStructuresViewController.swift in Sources */,
 				84320AB922C79F7E00EEDA34 /* StringGenerator.swift in Sources */,
 				84C5D66722B82CDA001E773F /* DataProvider.swift in Sources */,
+				84A3465922F0E130006F6178 /* Extensions.swift in Sources */,
+				84A3465422E762A2006F6178 /* SharedTextParserViewController.swift in Sources */,
 				848115A622AEE3A200EA3624 /* ScreenColorBehavior.swift in Sources */,
 				84C5D66B22B8319E001E773F /* SessionSummaryViewController.swift in Sources */,
 				84C5D66F22B83A6B001E773F /* TimerProvider.swift in Sources */,
 				845DFFDD22A07B8500A62185 /* AppDelegate.swift in Sources */,
+				84A3465B22F0E157006F6178 /* DateReplacer.swift in Sources */,
 				848115A022AEDA7C00EA3624 /* ViewControllerLifeCycleBehavior.swift in Sources */,
 				848115A822AEE52D00EA3624 /* ProfileViewController.swift in Sources */,
 				84C5D66922B82EFE001E773F /* FeedViewController.swift in Sources */,
 				848115A222AEDBDF00EA3624 /* BenchmarkViewController.swift in Sources */,
+				84A3465722EDA8D3006F6178 /* LengthMeasureReplacer.swift in Sources */,
 				84320AB322C7828300EEDA34 /* AlgoProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

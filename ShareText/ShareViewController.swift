@@ -17,15 +17,42 @@ class ShareViewController: SLComposeServiceViewController {
     }
 
     override func didSelectPost() {
-        // This is called after the user selects Post. Do the upload of contentText and/or NSExtensionContext attachments.
-    
-        // Inform the host that we're done, so it un-blocks its UI. Note: Alternatively you could call super's -didSelectPost, which will similarly complete the extension context.
-        self.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
+        guard let text = textView.text else {return}
+
+        for item: Any in extensionContext!.inputItems {
+            if let inputItem = item as? NSExtensionItem {
+                for _: Any in inputItem.attachments! {
+                    if let ud = UserDefaults(suiteName: "group.ShareText.Otus") {
+                        ud.set(text, forKey: "text")
+                    }
+                }
+            }
+        }
+
+        let url = URL(string: "ShareText://text")
+        if let url = url {
+            openURL(url)
+        }
+
+        dismiss(animated: false) {
+            self.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
+        }
     }
 
     override func configurationItems() -> [Any]! {
         // To add configuration options via table cells at the bottom of the sheet, return an array of SLComposeSheetConfigurationItem here.
         return []
+    }
+
+    @objc func openURL(_ url: URL) -> Bool {
+        var responder: UIResponder? = self
+        while responder != nil {
+            if let app = responder as? UIApplication {
+                return app.perform(#selector(openURL(_:)), with: url) != nil
+            }
+            responder = responder?.next
+        }
+        return false
     }
 
 }
