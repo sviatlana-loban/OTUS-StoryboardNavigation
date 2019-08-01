@@ -43,6 +43,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("Terminating: applicationWillTerminate")
     }
 
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool
+    {
+        if url.scheme == "ShareText"
+        {
+            let storyboard = UIStoryboard(name: "SharedTextParser", bundle: nil)
+            let sharedViewController = storyboard.instantiateInitialViewController()
+            let currentViewController = UIApplication.shared.keyWindow?.rootViewController?.topMostViewController()
+            if let sharedViewController = sharedViewController, let currentViewController = currentViewController {
+                currentViewController.present(sharedViewController, animated: true, completion: nil)
+            }
+
+        }
+        return true
+    }
+
 
 }
 
