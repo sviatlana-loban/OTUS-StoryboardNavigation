@@ -11,7 +11,8 @@ import UIKit
 class BenchmarkViewController: UIViewController, BenchmarkCellDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    var dataSource = Services.timerProvider.timers
+
+    weak var viewModel: BenchmarkViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +22,11 @@ class BenchmarkViewController: UIViewController, BenchmarkCellDelegate {
         
         addBehaviors(behaviors: [DateTimerBehavior( startBlock: { [unowned self] in
             self.collectionView.reloadData()
-            }, endBlock: { [unowned self] in self.dataSource.forEach{$0.kill()} } )])
+            }, endBlock: { [unowned self] in self.viewModel.killTimers() } )])
     }
     
     func updateChartTapped(at index: IndexPath) {
-        dataSource[index.item].updateRunStopPercents()
+        viewModel.updateChartTapped(at: index.item)
     }
     
 }
@@ -33,7 +34,7 @@ class BenchmarkViewController: UIViewController, BenchmarkCellDelegate {
 // MARK: UICollectionViewDataSource & UICollectionViewDelegate
 extension BenchmarkViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dataSource.count
+        return viewModel.getNumberOfTimers()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -43,14 +44,13 @@ extension BenchmarkViewController: UICollectionViewDataSource, UICollectionViewD
         cell.delegate = self
         cell.index = indexPath
         
-        let itemTimer = dataSource[indexPath.item]
-        let timerValues = itemTimer.getRunStopPercents()
-        cell.update(text: itemTimer.getTimerString() ?? "not started", runValue: timerValues.runValue, stopValue: timerValues.stopValue)
+        let timerInfo = viewModel.getTimerInfo(at: indexPath.item)
+        cell.update(text: timerInfo.text, runValue: timerInfo.runValue, stopValue: timerInfo.stopValue)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        dataSource[indexPath.item].pause()
+        viewModel.timerSelected(at: indexPath.item)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
