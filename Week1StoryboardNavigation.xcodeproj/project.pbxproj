@@ -10,6 +10,8 @@
 		84274DCB232172860011C1D8 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84274DCA232172860011C1D8 /* ServiceLocator.swift */; };
 		84274DD023218F120011C1D8 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84274DCF23218F120011C1D8 /* FeedViewModel.swift */; };
 		84274DD42321966B0011C1D8 /* BenchmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84274DD32321966A0011C1D8 /* BenchmarkViewModel.swift */; };
+		84274DDB23219C4F0011C1D8 /* SharedTextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84274DDA23219C4F0011C1D8 /* SharedTextModel.swift */; };
+		84274DDD23219C600011C1D8 /* SharedTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84274DDC23219C600011C1D8 /* SharedTextViewModel.swift */; };
 		84320AB322C7828300EEDA34 /* AlgoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84320AB222C7828300EEDA34 /* AlgoProvider.swift */; };
 		84320AB522C7829800EEDA34 /* Profiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84320AB422C7829800EEDA34 /* Profiler.swift */; };
 		84320AB722C78FA800EEDA34 /* SuffixIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84320AB622C78FA800EEDA34 /* SuffixIterator.swift */; };
@@ -81,6 +83,8 @@
 		84274DCA232172860011C1D8 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		84274DCF23218F120011C1D8 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		84274DD32321966A0011C1D8 /* BenchmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchmarkViewModel.swift; sourceTree = "<group>"; };
+		84274DDA23219C4F0011C1D8 /* SharedTextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTextModel.swift; sourceTree = "<group>"; };
+		84274DDC23219C600011C1D8 /* SharedTextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTextViewModel.swift; sourceTree = "<group>"; };
 		84320AB222C7828300EEDA34 /* AlgoProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlgoProvider.swift; sourceTree = "<group>"; };
 		84320AB422C7829800EEDA34 /* Profiler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profiler.swift; sourceTree = "<group>"; };
 		84320AB622C78FA800EEDA34 /* SuffixIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixIterator.swift; sourceTree = "<group>"; };
@@ -183,6 +187,31 @@
 				84274DD32321966A0011C1D8 /* BenchmarkViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		84274DD523219C190011C1D8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84A3465022E6548E006F6178 /* SharedTextParser.storyboard */,
+				84A3465322E762A2006F6178 /* SharedTextParserViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84274DD723219C280011C1D8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84274DDC23219C600011C1D8 /* SharedTextViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		84274DD923219C330011C1D8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84274DDA23219C4F0011C1D8 /* SharedTextModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		84320AC222C7AA0300EEDA34 /* DataStructures */ = {
@@ -324,8 +353,9 @@
 		84A3464F22E65470006F6178 /* SharedTextParser */ = {
 			isa = PBXGroup;
 			children = (
-				84A3465022E6548E006F6178 /* SharedTextParser.storyboard */,
-				84A3465322E762A2006F6178 /* SharedTextParserViewController.swift */,
+				84274DD923219C330011C1D8 /* Model */,
+				84274DD723219C280011C1D8 /* ViewModel */,
+				84274DD523219C190011C1D8 /* View */,
 			);
 			path = SharedTextParser;
 			sourceTree = "<group>";
@@ -478,6 +508,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84320AC022C7A9E400EEDA34 /* SwiftArrayManipulator.swift in Sources */,
+				84274DDB23219C4F0011C1D8 /* SharedTextModel.swift in Sources */,
 				84C5D67D22C155E1001E773F /* PieChartView.swift in Sources */,
 				84320ABB22C7A61A00EEDA34 /* SuffixViewController.swift in Sources */,
 				84274DCB232172860011C1D8 /* ServiceLocator.swift in Sources */,
@@ -504,6 +535,7 @@
 				84274DD42321966B0011C1D8 /* BenchmarkViewModel.swift in Sources */,
 				84C5D66B22B8319E001E773F /* SessionSummaryViewController.swift in Sources */,
 				84C5D66F22B83A6B001E773F /* TimerProvider.swift in Sources */,
+				84274DDD23219C600011C1D8 /* SharedTextViewModel.swift in Sources */,
 				845DFFDD22A07B8500A62185 /* AppDelegate.swift in Sources */,
 				84A3465B22F0E157006F6178 /* DateReplacer.swift in Sources */,
 				848115A022AEDA7C00EA3624 /* ViewControllerLifeCycleBehavior.swift in Sources */,

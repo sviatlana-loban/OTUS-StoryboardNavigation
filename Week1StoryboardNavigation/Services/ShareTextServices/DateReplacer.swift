@@ -9,33 +9,20 @@
 import Foundation
 
 final class DateReplacer {
-    let fromLocale: Locale
-    let toLocale: Locale
 
-    private let fromDateFormatter: DateFormatter
-    private let toDateFormatter: DateFormatter
-
-    private let dateRegex: String//
-
-    init(fromLocale: Locale, toLocale: Locale, regexPattern: String) {
-        self.fromLocale = fromLocale
-        self.toLocale = toLocale
+    func replaceDate(in text: String, fromLocale: Locale, toLocale: Locale, regexPattern: String) -> String {
 
         let dateFormat = "dd MMMM yyyy"
-        self.fromDateFormatter = DateFormatter()
-        self.fromDateFormatter.locale = fromLocale
-        self.fromDateFormatter.dateFormat = dateFormat
+        let fromDateFormatter = DateFormatter()
+        fromDateFormatter.locale = fromLocale
+        fromDateFormatter.dateFormat = dateFormat
 
-        self.toDateFormatter = DateFormatter()
-        self.toDateFormatter.locale = toLocale
-        self.toDateFormatter.dateFormat = dateFormat
+        let toDateFormatter = DateFormatter()
+        toDateFormatter.locale = toLocale
+        toDateFormatter.dateFormat = dateFormat
 
-        self.dateRegex = regexPattern
-    }
-
-    func replaceDate(in text: String) -> String {
         var resultText = text
-        let dates = text.matches(for: dateRegex)
+        let dates = text.matches(for: regexPattern)
         for i in (0..<dates.count).reversed() {
             let dateRange = dates[i]
             if let range = Range(dateRange, in: text), let fromDate = fromDateFormatter.date(from: String(text[range])) {
