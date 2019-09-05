@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84274DCB232172860011C1D8 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84274DCA232172860011C1D8 /* ServiceLocator.swift */; };
+		84274DD023218F120011C1D8 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84274DCF23218F120011C1D8 /* FeedViewModel.swift */; };
 		84320AB322C7828300EEDA34 /* AlgoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84320AB222C7828300EEDA34 /* AlgoProvider.swift */; };
 		84320AB522C7829800EEDA34 /* Profiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84320AB422C7829800EEDA34 /* Profiler.swift */; };
 		84320AB722C78FA800EEDA34 /* SuffixIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84320AB622C78FA800EEDA34 /* SuffixIterator.swift */; };
@@ -75,6 +77,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		84274DCA232172860011C1D8 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
+		84274DCF23218F120011C1D8 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		84320AB222C7828300EEDA34 /* AlgoProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlgoProvider.swift; sourceTree = "<group>"; };
 		84320AB422C7829800EEDA34 /* Profiler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profiler.swift; sourceTree = "<group>"; };
 		84320AB622C78FA800EEDA34 /* SuffixIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixIterator.swift; sourceTree = "<group>"; };
@@ -141,6 +145,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84274DCC23218E120011C1D8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84320AC522C7EF5D00EEDA34 /* Feed.storyboard */,
+				84C5D66822B82EFE001E773F /* FeedViewController.swift */,
+				848115A922AEE96400EA3624 /* FeedViewControllerB.swift */,
+				848115AB22AEE97200EA3624 /* FeedViewControllerC.swift */,
+				84C5D66A22B8319E001E773F /* SessionSummaryViewController.swift */,
+				84320ABA22C7A61A00EEDA34 /* SuffixViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84274DCE23218E3C0011C1D8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84274DCF23218F120011C1D8 /* FeedViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		84320AC222C7AA0300EEDA34 /* DataStructures */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,12 +227,8 @@
 		848115AD22AEEC6300EA3624 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				84320AC522C7EF5D00EEDA34 /* Feed.storyboard */,
-				84C5D66822B82EFE001E773F /* FeedViewController.swift */,
-				848115A922AEE96400EA3624 /* FeedViewControllerB.swift */,
-				848115AB22AEE97200EA3624 /* FeedViewControllerC.swift */,
-				84C5D66A22B8319E001E773F /* SessionSummaryViewController.swift */,
-				84320ABA22C7A61A00EEDA34 /* SuffixViewController.swift */,
+				84274DCE23218E3C0011C1D8 /* ViewModel */,
+				84274DCC23218E120011C1D8 /* View */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -303,6 +324,7 @@
 		84C5D66522B82C48001E773F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				84274DCA232172860011C1D8 /* ServiceLocator.swift */,
 				84C5D66322B82C40001E773F /* Services.swift */,
 				84320AB422C7829800EEDA34 /* Profiler.swift */,
 				84320AB222C7828300EEDA34 /* AlgoProvider.swift */,
@@ -439,6 +461,7 @@
 				84320AC022C7A9E400EEDA34 /* SwiftArrayManipulator.swift in Sources */,
 				84C5D67D22C155E1001E773F /* PieChartView.swift in Sources */,
 				84320ABB22C7A61A00EEDA34 /* SuffixViewController.swift in Sources */,
+				84274DCB232172860011C1D8 /* ServiceLocator.swift in Sources */,
 				845DFFF422A2F4E100A62185 /* ShadowedButtton.swift in Sources */,
 				84C5D66D22B8349E001E773F /* BenchmarkCollectionViewCell.swift in Sources */,
 				848115A422AEE31300EA3624 /* DateTimerBehavior.swift in Sources */,
@@ -453,6 +476,7 @@
 				84320AB522C7829800EEDA34 /* Profiler.swift in Sources */,
 				84C5D66422B82C40001E773F /* Services.swift in Sources */,
 				84320ABD22C7A71400EEDA34 /* DataStructuresViewController.swift in Sources */,
+				84274DD023218F120011C1D8 /* FeedViewModel.swift in Sources */,
 				84320AB922C79F7E00EEDA34 /* StringGenerator.swift in Sources */,
 				84C5D66722B82CDA001E773F /* DataProvider.swift in Sources */,
 				84A3465922F0E130006F6178 /* Extensions.swift in Sources */,

@@ -11,10 +11,9 @@ import UIKit
 class FeedViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    
     private let reuseId = "feedReusableCell"
-    let dataSource = Services.dataProvider.data
-    let algoNames = AlgoProvider().all
+
+    weak var viewModel: FeedViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,12 +27,12 @@ class FeedViewController: UIViewController {
 
 extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.count
+        return viewModel.getRowsCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseId, for: indexPath)
-        cell.textLabel?.text = dataSource[indexPath.row]
+        cell.textLabel?.text = viewModel.getRowTitle(at: indexPath.row)
         
         return cell
     }
@@ -42,14 +41,15 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
         
         let storyboard = UIStoryboard(name: "Feed", bundle: nil)
         var sessionSummaryViewController: UIViewController?
+        let text = viewModel.getRowTitle(at: indexPath.row)
         
-        if dataSource[indexPath.row] == "SuffixArray" {
+        if text == "SuffixArray" {
             sessionSummaryViewController = storyboard.instantiateViewController(withIdentifier: "SuffixViewController")
         } else {
             guard let sessionSummary = storyboard.instantiateViewController(withIdentifier: "SessionSummaryViewController") as? SessionSummaryViewController else {
                 return
             }
-            sessionSummary.text = dataSource[indexPath.row]
+            sessionSummary.text = text
             sessionSummaryViewController = sessionSummary
         }
         

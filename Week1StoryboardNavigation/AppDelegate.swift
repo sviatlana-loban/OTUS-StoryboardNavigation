@@ -20,6 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         print("Launching: " + #function)
+
+        let locator = ServiceLocator.shared
+        locator.addService(service: DataProvider(count: 20))
+        locator.addService(service: TimerProvider(count: 20))
+        locator.addService(service: AlgoProvider())
+
         return true
     }
 

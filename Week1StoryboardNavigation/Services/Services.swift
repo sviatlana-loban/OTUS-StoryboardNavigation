@@ -8,8 +8,6 @@
 
 import Foundation
 
-import Foundation
-
 class Services {
     
     static var dataProvider: DataProvider = {
