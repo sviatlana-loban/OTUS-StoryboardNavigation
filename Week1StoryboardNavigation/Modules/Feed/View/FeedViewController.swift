@@ -40,20 +40,22 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let storyboard = UIStoryboard(name: "Feed", bundle: nil)
-        var sessionSummaryViewController: UIViewController?
+        var pushViewController: UIViewController?
         let text = viewModel.getRowTitle(at: indexPath.row)
         
         if text == "SuffixArray" {
-            sessionSummaryViewController = storyboard.instantiateViewController(withIdentifier: "SuffixViewController")
+            pushViewController = storyboard.instantiateViewController(withIdentifier: "SuffixViewController")
+            (pushViewController as? SuffixViewController)?.algoNames = viewModel.algoNames
+            (pushViewController as? SuffixViewController)?.arrayManipulator = viewModel.arrayManipulator
         } else {
             guard let sessionSummary = storyboard.instantiateViewController(withIdentifier: "SessionSummaryViewController") as? SessionSummaryViewController else {
                 return
             }
             sessionSummary.text = text
-            sessionSummaryViewController = sessionSummary
+            pushViewController = sessionSummary
         }
         
-        if let pushViewController = sessionSummaryViewController {
+        if let pushViewController = pushViewController {
             self.navigationController?.pushViewController(pushViewController, animated: true)
         }
         

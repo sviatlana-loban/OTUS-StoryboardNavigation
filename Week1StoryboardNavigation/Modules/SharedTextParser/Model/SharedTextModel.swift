@@ -50,8 +50,7 @@ final class SharedTextModel {
 
     private func replaceMeasure(in string: String, toLocale: Locales) -> String {
         guard let toLocale = locales[toLocale] else { return string }
-        let measureReplacer = LengthMeasureReplacer(toLocale: toLocale)
-        return measureReplacer.replaceMeasure(in: string)
+        return measureReplacer.replaceMeasure(in: string, toLocale: toLocale)
     }
 
 }

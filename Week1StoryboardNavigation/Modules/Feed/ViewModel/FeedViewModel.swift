@@ -9,10 +9,17 @@
 import Foundation
 
 final class FeedViewModel {
-    let items: [String]
 
-    init(dataProvider: DataProvider) {
+    private let items: [String]
+    let algoNames: [String]
+    let arrayManipulator: SuffixArrayManipulator
+    let view: FeedViewController
+
+    init(view: FeedViewController, dataProvider: DataProvider, algoProvider: AlgoProvider, arrayManipulator: SuffixArrayManipulator) {
         self.items = dataProvider.data
+        self.algoNames = algoProvider.all
+        self.arrayManipulator = arrayManipulator
+        self.view = view
     }
 
     func getRowsCount() -> Int {
