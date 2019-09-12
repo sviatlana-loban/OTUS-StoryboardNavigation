@@ -8,20 +8,18 @@
 
 import Foundation
 
-import Foundation
-
 class Services {
     
-    static var dataProvider: DataProvider = {
-        return DataProvider(count: 20)
-    }()
-    
-    static var timerProvider: TimerProvider = {
-        return TimerProvider(count: 20)
-    }()
-    
-    static var algoProvider: AlgoProvider = {
-        return AlgoProvider()
-    }()
+//    static var dataProvider: DataProvider = {
+//        return DataProvider(count: 20)
+//    }()
+//    
+//    static var timerProvider: TimerProvider = {
+//        return TimerProvider(count: 20)
+//    }()
+//    
+//    static var algoProvider: AlgoProvider = {
+//        return AlgoProvider()
+//    }()
     
 }
