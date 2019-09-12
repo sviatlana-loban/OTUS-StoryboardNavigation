@@ -11,18 +11,26 @@ import Foundation
 
 class SharedTextParserViewController: UIViewController {
 
-    weak var viewModel: SharedTextViewModel!
+    var viewModel: SharedTextViewModel!
 
     @IBOutlet weak var sharedLabel: UILabel!
     @IBOutlet weak var segmentControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bind()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.viewIsReady()
+    }
+
+    private func bind() {
+        let sl = ServiceLocator.shared
+        let sharedTextModel = SharedTextModel(dateReplacer: sl.getService()!, measureReplacer: sl.getService()!)
+        let viewModel = SharedTextViewModel(view: self, model: sharedTextModel)
+        self.viewModel = viewModel
     }
 
 

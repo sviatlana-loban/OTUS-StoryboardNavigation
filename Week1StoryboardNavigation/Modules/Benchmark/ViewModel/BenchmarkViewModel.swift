@@ -10,12 +10,10 @@ import Foundation
 
 final class BenchmarkViewModel {
 
-    let view: BenchmarkViewController
     let timers: [TimerProvider.PausableTimer]
 
-    init(view: BenchmarkViewController, timerProvider: TimerProvider) {
+    init(timerProvider: TimerProvider) {
         self.timers = timerProvider.timers
-        self.view = view
     }
 
     func getNumberOfTimers() -> Int {

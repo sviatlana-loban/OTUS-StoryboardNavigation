@@ -13,14 +13,21 @@ class FeedViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     private let reuseId = "feedReusableCell"
 
-    weak var viewModel: FeedViewModel!
+    var viewModel: FeedViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bind()
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseId)
+    }
+
+    private func bind() {
+        let sl = ServiceLocator.shared
+        let viewModel = FeedViewModel(dataProvider: sl.getService()!, algoProvider: sl.getService()!, arrayManipulator: sl.getService()!)
+        self.viewModel = viewModel
     }
 
 }

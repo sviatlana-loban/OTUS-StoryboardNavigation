@@ -10,7 +10,7 @@ import Foundation
 
 final class SharedTextViewModel {
 
-    let view: SharedTextParserViewController
+    weak var view: SharedTextParserViewController?
     let model: SharedTextModel
 
 
@@ -22,7 +22,7 @@ final class SharedTextViewModel {
     func viewIsReady() {
         if let ud = UserDefaults(suiteName: "group.ShareText.Otus"), let text = ud.string(forKey: "text") {
             model.initialText = text
-            view.updateSharedLabel(with: text)
+            view?.updateSharedLabel(with: text)
         }
     }
 
@@ -30,15 +30,15 @@ final class SharedTextViewModel {
         switch value {
         case 0:
             let text = model.replaceLocalizable(toLocale: .en)
-            view.updateSharedLabel(with: text)
+            view?.updateSharedLabel(with: text)
         case 1:
             let text = model.replaceLocalizable(toLocale: .fr)
-            view.updateSharedLabel(with: text)
+            view?.updateSharedLabel(with: text)
         case 2:
             let text = model.replaceLocalizable(toLocale: .zh)
-            view.updateSharedLabel(with: text)
+            view?.updateSharedLabel(with: text)
         default:
-            view.updateSharedLabel(with: model.initialText)
+            view?.updateSharedLabel(with: model.initialText)
         }
     }
 

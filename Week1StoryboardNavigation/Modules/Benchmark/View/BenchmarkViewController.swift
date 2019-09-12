@@ -12,10 +12,11 @@ class BenchmarkViewController: UIViewController, BenchmarkCellDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
 
-    weak var viewModel: BenchmarkViewModel!
+    var viewModel: BenchmarkViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bind()
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -23,6 +24,12 @@ class BenchmarkViewController: UIViewController, BenchmarkCellDelegate {
         addBehaviors(behaviors: [DateTimerBehavior( startBlock: { [unowned self] in
             self.collectionView.reloadData()
             }, endBlock: { [unowned self] in self.viewModel.killTimers() } )])
+    }
+
+    private func bind() {
+        let sl = ServiceLocator.shared
+        let viewModel = BenchmarkViewModel(timerProvider: sl.getService()!)
+        self.viewModel = viewModel
     }
     
     func updateChartTapped(at index: IndexPath) {
