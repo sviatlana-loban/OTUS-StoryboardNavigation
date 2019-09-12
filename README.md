@@ -1,3 +1,3 @@
 # OTUS-StoryboardNavigation
 
-After downloading, please, run Pod install in terminal
+After downloading, please, run 'Pod install' command in terminal
