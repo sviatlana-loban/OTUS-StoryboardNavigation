@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SLCustomViewComponents
 
 protocol BenchmarkCellDelegate: class {
     func updateChartTapped(at index: IndexPath)
@@ -21,7 +22,7 @@ class BenchmarkCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet private weak var stackView: UIStackView!
     @IBOutlet private weak var label: UILabel!
-    @IBOutlet weak var pieChartView: PieChartView!
+    @IBOutlet weak var pieChartView: SLPieChartView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,8 +38,8 @@ class BenchmarkCollectionViewCell: UICollectionViewCell {
     
     func update(text: String, runValue: Double, stopValue: Double) {
         pieChartView.segments = [
-            Segment(color: .red, value: CGFloat(runValue), title: "\(runValue)%r"),
-            Segment(color: .blue, value: CGFloat(stopValue), title: "\(stopValue)%s"),
+            SLSegment(color: .red, value: CGFloat(runValue), title: "\(runValue)%r"),
+            SLSegment(color: .blue, value: CGFloat(stopValue), title: "\(stopValue)%s"),
         ]
         label.text = text
     }

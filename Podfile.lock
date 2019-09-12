@@ -1,0 +1,21 @@
+PODS:
+  - SLCustomViewComponents (1.0.2)
+
+DEPENDENCIES:
+  - SLCustomViewComponents (from `https://github.com/sviatlana-loban/SLCustomViewComponents`)
+
+EXTERNAL SOURCES:
+  SLCustomViewComponents:
+    :git: https://github.com/sviatlana-loban/SLCustomViewComponents
+
+CHECKOUT OPTIONS:
+  SLCustomViewComponents:
+    :commit: 4148f01065e2bb6a2f89c34c7151313a0e77f1ce
+    :git: https://github.com/sviatlana-loban/SLCustomViewComponents
+
+SPEC CHECKSUMS:
+  SLCustomViewComponents: bafcb91cb0f9b58880d098a0c89145830e681aca
+
+PODFILE CHECKSUM: 3078563c5b9a602fa27bcde8e8b2ef5051e181d4
+
+COCOAPODS: 1.7.5
