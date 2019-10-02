@@ -46,16 +46,26 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let storyboard = UIStoryboard(name: "Feed", bundle: nil)
+        let feedStoryboard = UIStoryboard(name: "Feed", bundle: nil)
+        let dataStructuresStoryboard = UIStoryboard(name: "DataStructures", bundle: nil)
         var pushViewController: UIViewController?
         let text = viewModel.getRowTitle(at: indexPath.row)
         
-        if text == "SuffixArray" {
-            pushViewController = storyboard.instantiateViewController(withIdentifier: "SuffixViewController")
+
+
+        switch text {
+        case "Array":
+            pushViewController = dataStructuresStoryboard.instantiateViewController(withIdentifier: "ArrayViewController")
+        case "Set":
+            pushViewController = dataStructuresStoryboard.instantiateViewController(withIdentifier: "SetViewController")
+        case "Dictionary":
+            pushViewController = dataStructuresStoryboard.instantiateViewController(withIdentifier: "DictionaryViewController")
+        case "SuffixArray":
+            pushViewController = feedStoryboard.instantiateViewController(withIdentifier: "SuffixViewController")
             (pushViewController as? SuffixViewController)?.algoNames = viewModel.algoNames
             (pushViewController as? SuffixViewController)?.arrayManipulator = viewModel.arrayManipulator
-        } else {
-            guard let sessionSummary = storyboard.instantiateViewController(withIdentifier: "SessionSummaryViewController") as? SessionSummaryViewController else {
+        default:
+            guard let sessionSummary = feedStoryboard.instantiateViewController(withIdentifier: "SessionSummaryViewController") as? SessionSummaryViewController else {
                 return
             }
             sessionSummary.text = text
