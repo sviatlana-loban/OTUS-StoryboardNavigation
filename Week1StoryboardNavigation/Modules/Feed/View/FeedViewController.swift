@@ -11,29 +11,35 @@ import UIKit
 class FeedViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    
     private let reuseId = "feedReusableCell"
-    let dataSource = Services.dataProvider.data
-    let algoNames = AlgoProvider().all
+
+    var viewModel: FeedViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bind()
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseId)
     }
 
+    private func bind() {
+        let sl = ServiceLocator.shared
+        let viewModel = FeedViewModel(dataProvider: sl.getService()!, algoProvider: sl.getService()!, arrayManipulator: sl.getService()!)
+        self.viewModel = viewModel
+    }
+
 }
 
 extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.count
+        return viewModel.getRowsCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseId, for: indexPath)
-        cell.textLabel?.text = dataSource[indexPath.row]
+        cell.textLabel?.text = viewModel.getRowTitle(at: indexPath.row)
         
         return cell
     }
@@ -41,19 +47,22 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let storyboard = UIStoryboard(name: "Feed", bundle: nil)
-        var sessionSummaryViewController: UIViewController?
+        var pushViewController: UIViewController?
+        let text = viewModel.getRowTitle(at: indexPath.row)
         
-        if dataSource[indexPath.row] == "SuffixArray" {
-            sessionSummaryViewController = storyboard.instantiateViewController(withIdentifier: "SuffixViewController")
+        if text == "SuffixArray" {
+            pushViewController = storyboard.instantiateViewController(withIdentifier: "SuffixViewController")
+            (pushViewController as? SuffixViewController)?.algoNames = viewModel.algoNames
+            (pushViewController as? SuffixViewController)?.arrayManipulator = viewModel.arrayManipulator
         } else {
             guard let sessionSummary = storyboard.instantiateViewController(withIdentifier: "SessionSummaryViewController") as? SessionSummaryViewController else {
                 return
             }
-            sessionSummary.text = dataSource[indexPath.row]
-            sessionSummaryViewController = sessionSummary
+            sessionSummary.text = text
+            pushViewController = sessionSummary
         }
         
-        if let pushViewController = sessionSummaryViewController {
+        if let pushViewController = pushViewController {
             self.navigationController?.pushViewController(pushViewController, animated: true)
         }
         

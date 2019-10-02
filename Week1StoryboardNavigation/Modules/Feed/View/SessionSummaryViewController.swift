@@ -11,7 +11,7 @@ import UIKit
 class SessionSummaryViewController: UIViewController {
     
     @IBOutlet var label: UILabel!
-    var text: String = ""
+    var text: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()

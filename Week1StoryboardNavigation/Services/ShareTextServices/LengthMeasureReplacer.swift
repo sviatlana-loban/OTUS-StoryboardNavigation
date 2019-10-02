@@ -10,20 +10,12 @@ import Foundation
 
 final class LengthMeasureReplacer {
 
-    let toLocale: Locale
-
-    private let toMeasurementFormatter: MeasurementFormatter
-
-    init(toLocale: Locale) {
-        self.toLocale = toLocale
-
-        self.toMeasurementFormatter = MeasurementFormatter()
-        self.toMeasurementFormatter.locale = toLocale
-    }
-
-    func replaceMeasure(in text: String) -> String {
+    func replaceMeasure(in text: String, toLocale: Locale) -> String {
         var resultText = text
         let matchedResults = findMeasures(in: text)
+
+        let toMeasurementFormatter = MeasurementFormatter()
+        toMeasurementFormatter.locale = toLocale
 
         for result in matchedResults {
             for i in (0..<result.ranges.count).reversed() {

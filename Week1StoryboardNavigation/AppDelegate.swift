@@ -20,6 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         print("Launching: " + #function)
+
+        let locator = ServiceLocator.shared
+        locator.addService(service: DataProvider(count: 20))
+        locator.addService(service: TimerProvider(count: 20))
+        locator.addService(service: AlgoProvider())
+        locator.addService(service: SuffixArrayManipulator())
+
+        locator.addService(service: DateReplacer())
+        locator.addService(service: LengthMeasureReplacer())
+
         return true
     }
 
@@ -48,10 +58,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if url.scheme == "ShareText"
         {
             let storyboard = UIStoryboard(name: "SharedTextParser", bundle: nil)
-            let sharedViewController = storyboard.instantiateInitialViewController()
-            let currentViewController = UIApplication.shared.keyWindow?.rootViewController?.topMostViewController()
-            if let sharedViewController = sharedViewController, let currentViewController = currentViewController {
-                currentViewController.present(sharedViewController, animated: true, completion: nil)
+            if let sharedViewController = storyboard.instantiateInitialViewController() as? SharedTextParserViewController {
+
+                let sl = ServiceLocator.shared
+                let sharedTextModel = SharedTextModel(dateReplacer: sl.getService()!, measureReplacer: sl.getService()!)
+                let viewModel = SharedTextViewModel(view: sharedViewController, model: sharedTextModel)
+                sharedViewController.viewModel = viewModel
+
+                let currentViewController = UIApplication.shared.keyWindow?.rootViewController?.topMostViewController()
+                if let currentViewController = currentViewController {
+                    currentViewController.present(sharedViewController, animated: true, completion: nil)
+                }
             }
 
         }

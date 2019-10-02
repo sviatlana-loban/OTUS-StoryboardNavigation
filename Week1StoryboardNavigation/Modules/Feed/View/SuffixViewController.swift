@@ -18,10 +18,11 @@ import UIKit
 
 class SuffixViewController: DataStructuresViewController {
     
+    //MARK: - Dependencies
+    var algoNames: [String]?
+    var arrayManipulator: SuffixArrayManipulator!
+
     //MARK: - Variables
-    let algoNames = Services.algoProvider.all
-    let arrayManipulator = SuffixArrayManipulator()
-    
     var creationTime: TimeInterval = 0
     var sortTime: TimeInterval = 0
     var lookupByIndexTime: TimeInterval = 0
@@ -42,7 +43,7 @@ class SuffixViewController: DataStructuresViewController {
     //MARK: Superclass creation/testing overrides
     
     override func create(_ size: Int) {
-        creationTime = arrayManipulator.setupWithNames(names: algoNames)
+        creationTime = arrayManipulator.setupWithNames(names: algoNames ?? [])
         self.searches = size
     }
     
