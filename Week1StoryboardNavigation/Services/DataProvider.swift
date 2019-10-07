@@ -14,8 +14,11 @@ final class DataProvider {
     
     init(count: Int) {
         data = [String].init()
+        data.append("Array")
+        data.append("Set")
+        data.append("Dictionary")
         data.append("SuffixArray")
-        for i in 1..<count {
+        for i in 4..<count {
             data.append("Item \(i)")
         }
     }

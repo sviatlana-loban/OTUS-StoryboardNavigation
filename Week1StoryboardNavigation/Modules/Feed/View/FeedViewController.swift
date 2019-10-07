@@ -11,6 +11,11 @@ import UIKit
 class FeedViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var slider: UISlider!
+    @IBOutlet var timeLabels: [UILabel]!
+    @IBOutlet weak var sliderValueLabel: UILabel!
+
     private let reuseId = "feedReusableCell"
 
     var viewModel: FeedViewModel!
@@ -22,11 +27,42 @@ class FeedViewController: UIViewController {
         self.tableView.dataSource = self
         
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseId)
+        self.spinner.isHidden = true
+    }
+    @IBAction func runTestButtonTapped(_ sender: Any) {
+        viewModel.runJobsButtonTapped()
+    }
+
+    @IBAction func sliderValueChanged(_ sender: UISlider) {
+        viewModel.sliderValueChanged(with: sender.value)
+    }
+
+    func startSpinner() {
+        spinner.isHidden = false
+        spinner.startAnimating()
+    }
+
+    func stopSpinner() {
+        spinner.isHidden = true
+        spinner.stopAnimating()
+    }
+
+    func updateLabels(with strings: [String]) {
+        var index = 0
+        for label in timeLabels {
+            label.text = strings[index]
+            index += 1
+        }
+    }
+
+    func updateSliderValueLavel(with value: String) {
+        sliderValueLabel.text = value
     }
 
     private func bind() {
         let sl = ServiceLocator.shared
         let viewModel = FeedViewModel(dataProvider: sl.getService()!, algoProvider: sl.getService()!, arrayManipulator: sl.getService()!)
+        viewModel.view = self
         self.viewModel = viewModel
     }
 
@@ -46,16 +82,26 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let storyboard = UIStoryboard(name: "Feed", bundle: nil)
+        let feedStoryboard = UIStoryboard(name: "Feed", bundle: nil)
+        let dataStructuresStoryboard = UIStoryboard(name: "DataStructures", bundle: nil)
         var pushViewController: UIViewController?
         let text = viewModel.getRowTitle(at: indexPath.row)
         
-        if text == "SuffixArray" {
-            pushViewController = storyboard.instantiateViewController(withIdentifier: "SuffixViewController")
+
+
+        switch text {
+        case "Array":
+            pushViewController = dataStructuresStoryboard.instantiateViewController(withIdentifier: "ArrayViewController")
+        case "Set":
+            pushViewController = dataStructuresStoryboard.instantiateViewController(withIdentifier: "SetViewController")
+        case "Dictionary":
+            pushViewController = dataStructuresStoryboard.instantiateViewController(withIdentifier: "DictionaryViewController")
+        case "SuffixArray":
+            pushViewController = feedStoryboard.instantiateViewController(withIdentifier: "SuffixViewController")
             (pushViewController as? SuffixViewController)?.algoNames = viewModel.algoNames
             (pushViewController as? SuffixViewController)?.arrayManipulator = viewModel.arrayManipulator
-        } else {
-            guard let sessionSummary = storyboard.instantiateViewController(withIdentifier: "SessionSummaryViewController") as? SessionSummaryViewController else {
+        default:
+            guard let sessionSummary = feedStoryboard.instantiateViewController(withIdentifier: "SessionSummaryViewController") as? SessionSummaryViewController else {
                 return
             }
             sessionSummary.text = text
