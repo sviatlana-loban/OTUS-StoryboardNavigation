@@ -9,7 +9,7 @@
 import Foundation
 
 open class SwiftArrayManipulator: ArrayManipulator {
-  fileprivate var intArray = [Int]()
+var intArray = [Int]()
   
   open func arrayHasObjects() -> Bool {
     if intArray.count == 0 {

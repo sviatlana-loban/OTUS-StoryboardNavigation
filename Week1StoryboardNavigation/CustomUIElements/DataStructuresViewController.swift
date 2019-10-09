@@ -14,6 +14,9 @@ import UIKit
 class DataStructuresViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
   //MARK: - Variables
+    var countLabelText: String {
+        return "Count label:"
+    }
 
   //MARK: IBOutlets
 
@@ -26,7 +29,7 @@ class DataStructuresViewController: UIViewController, UITableViewDataSource, UIT
 
   //MARK: item tracking
 
-  fileprivate var numberOfItems: Int = 1 //Default to 1
+  fileprivate var numberOfItems: Int = 5
 
   //MARK: Lazy-instantiated variables
 
@@ -76,7 +79,7 @@ class DataStructuresViewController: UIViewController, UITableViewDataSource, UIT
   //MARK: Convenience methods
 
   func updateCountLabel() {
-    countLabel.text = "How many searches: \(numberFormatter.string(from: numberOfItems as NSNumber)!)"
+    countLabel.text = "\(countLabelText) \(numberFormatter.string(from: numberOfItems as NSNumber)!)"
   }
 
   func setSliderValueProgrammatically(_ value: Int) {

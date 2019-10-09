@@ -10,7 +10,7 @@ import Foundation
 
 final class SuffixArrayManipulator {
     
-    fileprivate var suffixArray = [(String, String)]()
+    var suffixArray = [(String, String)]()
     
     func setupWithNames(names: [String]) -> TimeInterval {
         return Profiler.runClosureForTime() {
