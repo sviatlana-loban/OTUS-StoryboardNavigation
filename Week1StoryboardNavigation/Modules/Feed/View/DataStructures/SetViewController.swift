@@ -45,6 +45,31 @@ class SetViewController: DataStructuresViewController {
     createAndTestButton.setTitle("Create Set and Test", for: UIControl.State())
   }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if let sm = FileService.retrieve(String(describing: SetModel.self), from: FileService.Directory.documents, as: SetModel.self) {
+            setManipulator.setToManipulate = sm.setToManipulate
+            creationTime = sm.setupWithObjectCount
+            add1ObjectTime = sm.add1Object
+            add5ObjectsTime = sm.add5Objects
+            add10ObjectsTime = sm.add10Objects
+            remove1ObjectTime = sm.remove1Object
+            remove5ObjectsTime = sm.remove5Objects
+            remove10ObjectsTime = sm.remove10Objects
+            lookup1ObjectTime = sm.lookup1Object
+            lookup10ObjectsTime = sm.lookup10Objects
+
+            testOnlyButton.isEnabled = !sm.setToManipulate.isEmpty
+        }
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        let sm = SetModel(setToManipulate: setManipulator.setToManipulate, setHasObjects: setManipulator.setHasObjects(), setupWithObjectCount: creationTime, add1Object: add1ObjectTime, add5Objects: add5ObjectsTime, add10Objects: add1ObjectTime, remove1Object: remove1ObjectTime, remove5Objects: remove5ObjectsTime, remove10Objects: remove1ObjectTime, lookup1Object: lookup1ObjectTime, lookup10Objects: lookup10ObjectsTime)
+        FileService.store(sm, to: FileService.Directory.documents, as: String(describing: SetModel.self))
+    }
+
   //MARK: Superclass creation/testing overrides
 
   override func create(_ size: Int) {

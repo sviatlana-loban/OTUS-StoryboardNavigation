@@ -45,6 +45,30 @@ class ArrayViewController: DataStructuresViewController {
     createAndTestButton.setTitle("Create Array and Test", for: [])
   }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let am = FileService.retrieve(String(describing: ArrayModel.self), from: FileService.Directory.documents, as: ArrayModel.self) {
+            arrayManipulator.intArray = am.array
+            creationTime = am.setupWithObjectCount
+            insertAt0Time = am.insertNewObjectAtBeginning
+            insertAtMidTime = am.insertNewObjectInMiddle
+            insertAtEndTime = am.addNewObjectAtEnd
+            removeAt0Time = am.removeFirstObject
+            removeAtMidTime = am.removeMiddleObject
+            removeAtEndTime = am.removeLastObject
+            lookupByIndexTime = am.lookupByIndex
+            lookupByObjectTime = am.lookupByObject
+
+            testOnlyButton.isEnabled = !am.array.isEmpty
+        }
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        let am = ArrayModel(array: arrayManipulator.intArray, arrayHasObjects: arrayManipulator.arrayHasObjects(), setupWithObjectCount: insertAt0Time, insertNewObjectAtBeginning: insertAt0Time, insertNewObjectInMiddle: insertAtMidTime, addNewObjectAtEnd: insertAtEndTime, removeFirstObject: removeAt0Time, removeMiddleObject: removeAtMidTime, removeLastObject: removeAtEndTime, lookupByIndex: lookupByIndexTime, lookupByObject: lookupByObjectTime)
+        FileService.store(am, to: FileService.Directory.documents, as: String(describing: ArrayModel.self))
+    }
+
   //MARK: Superclass creation/testing overrides
 
   override func create(_ size: Int) {

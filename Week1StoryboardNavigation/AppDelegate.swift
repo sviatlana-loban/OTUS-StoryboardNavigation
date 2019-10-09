@@ -29,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         locator.addService(service: DateReplacer())
         locator.addService(service: LengthMeasureReplacer())
+        locator.addService(service: FileService())
 
         return true
     }

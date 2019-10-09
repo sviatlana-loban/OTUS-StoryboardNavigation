@@ -17,6 +17,7 @@ private enum ArrayVCRow: Int {
 import UIKit
 
 class SuffixViewController: DataStructuresViewController {
+
     
     //MARK: - Dependencies
     var algoNames: [String]?
@@ -25,11 +26,15 @@ class SuffixViewController: DataStructuresViewController {
     //MARK: - Variables
     var creationTime: TimeInterval = 0
     var sortTime: TimeInterval = 0
-    var lookupByIndexTime: TimeInterval = 0
+    //var lookupByIndexTime: TimeInterval = 0
     var lookupByObjectTime: TimeInterval = 0
     var lookupExistingObjects: TimeInterval = 0
     var lookupSeveralTimes: TimeInterval = 0
     var searches: Int = 1
+
+    override var countLabelText: String {
+        return "Number of searches:"
+    }
     
     //MARK: - Methods
     
@@ -39,9 +44,31 @@ class SuffixViewController: DataStructuresViewController {
         super.viewDidLoad()
         createAndTestButton.setTitle("Create Array and Test", for: [])
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if let sam = FileService.retrieve(String(describing: SuffixArrayModel.self), from: FileService.Directory.documents, as: SuffixArrayModel.self) {
+            arrayManipulator.setupWithNames(names: algoNames ?? [])
+            creationTime = sam.setupWithNames
+            sortTime = sam.sortAscending
+            lookupByObjectTime = sam.lookupStrings
+            lookupExistingObjects = sam.lookupExistingStrings
+            lookupSeveralTimes = sam.lookupSeveralTimes
+
+            testOnlyButton.isEnabled = true
+        }
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        guard arrayManipulator.arrayHasObjects() else { return }
+        let sam = SuffixArrayModel(setupWithNames: creationTime, sortAscending: sortTime, arrayHasObjects: false, lookupStrings: lookupByObjectTime, lookupExistingStrings: lookupExistingObjects, lookupSeveralTimes: lookupSeveralTimes)
+        FileService.store(sam, to: FileService.Directory.documents, as: String(describing: SuffixArrayModel.self))
+    }
     
     //MARK: Superclass creation/testing overrides
-    
+
     override func create(_ size: Int) {
         creationTime = arrayManipulator.setupWithNames(names: algoNames ?? [])
         self.searches = size

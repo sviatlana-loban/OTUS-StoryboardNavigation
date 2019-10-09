@@ -45,6 +45,31 @@ class DictionaryViewController: DataStructuresViewController {
     createAndTestButton.setTitle("Create Dictionary and Test", for: UIControl.State())
   }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if let dm = FileService.retrieve(String(describing: DictionaryModel.self), from: FileService.Directory.documents, as: DictionaryModel.self) {
+            dictionaryManipulator.intDictionary = dm.dict
+            creationTime = dm.setupWithEntryCount
+            add1EntryTime = dm.add1Entry
+            add5EntriesTime = dm.add5Entries
+            add10EntriesTime = dm.add10Entries
+            remove1EntryTime = dm.remove1Entry
+            remove5EntriesTime = dm.remove5Entries
+            remove10EntriesTime = dm.remove10Entries
+            lookup1EntryTime = dm.lookup1EntryTime
+            lookup10EntriesTime = dm.lookup10EntriesTime
+
+            testOnlyButton.isEnabled = !dm.dict.isEmpty
+        }
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        let dm = DictionaryModel(dict: dictionaryManipulator.intDictionary, dictHasEntries: dictionaryManipulator.dictHasEntries(), setupWithEntryCount: creationTime, add1Entry: add1EntryTime, add5Entries: add5EntriesTime, add10Entries: add10EntriesTime, remove1Entry: remove1EntryTime, remove5Entries: remove5EntriesTime, remove10Entries: remove10EntriesTime, lookup1EntryTime: lookup1EntryTime, lookup10EntriesTime: lookup10EntriesTime)
+        FileService.store(dm, to: FileService.Directory.documents, as: String(describing: DictionaryModel.self))
+    }
+
   //MARK: Superclass creation/testing overrides
 
   override func create(_ size: Int) {
@@ -61,6 +86,7 @@ class DictionaryViewController: DataStructuresViewController {
       remove10EntriesTime = dictionaryManipulator.remove10Entries()
       lookup1EntryTime = dictionaryManipulator.lookup1EntryTime()
       lookup10EntriesTime = dictionaryManipulator.lookup10EntriesTime()
+
     } else {
       print("Dictionary not yet set up!")
     }

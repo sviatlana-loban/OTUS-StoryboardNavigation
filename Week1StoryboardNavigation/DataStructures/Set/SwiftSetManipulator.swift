@@ -9,7 +9,9 @@
 import Foundation
 
 open class SwiftSetManipulator : SetManipulator {
-  fileprivate var setToManipulate = Set<String>()
+
+
+  var setToManipulate = Set<String>()
   fileprivate let generator = StringGenerator()
   
   open func setHasObjects() -> Bool {
